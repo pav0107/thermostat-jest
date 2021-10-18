@@ -1,6 +1,13 @@
 const Thermostat = require('./thermostat.js');
 
-it('it starts at 20 degrees', () => {
-  let thermostat = new Thermostat();
-  expect(thermostat.temperature).toEqual(20);
+describe('Thermostat', () => {
+  let thermostat;
+
+  beforeEach(() => {
+    thermostat = new Thermostat();
+  });
+
+  it('starts at 20 degrees', () => {
+    expect(thermostat.temperature).toEqual(20);
+  });
 });
