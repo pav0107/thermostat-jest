@@ -1,5 +1,6 @@
 class Thermostat {
   constructor() {
+    this.MINIMUM_TEMPERATURE = 10;
     this.temperature = 20;
   }
   getCurrentTemperature() {
@@ -9,7 +10,13 @@ class Thermostat {
     this.temperature++;
   }
   down() {
+    if (this.isMinimumTemperature()) {
+      return;
+    }
     this.temperature--;
+  }
+  isMinimumTemperature() {
+    return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 }
 module.exports = Thermostat;
