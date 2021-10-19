@@ -56,4 +56,5 @@ class Thermostat {
     }
   }
 }
+
 export default Thermostat;
