@@ -43,4 +43,21 @@ describe('Thermostat', () => {
     thermostat.switchPowerSavingModeOn();
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
+  describe('when PSM is on', () => {
+    it('has a maximum value of 25', () => {
+      for (let i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.getCurrentTemperature()).toBe(25);
+    });
+  });
+  describe('when PSM is off', () => {
+    it('has a maximum value of 32', () => {
+      thermostat.switchPowerSavingModeOff();
+      for (let i = 0; i < 13; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.getCurrentTemperature()).toBe(32);
+    });
+  });
 });
