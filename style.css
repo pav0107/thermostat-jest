@@ -9,3 +9,11 @@
 .high-usage {
   color: red;
 }
+
+.shown {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
