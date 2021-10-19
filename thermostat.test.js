@@ -1,4 +1,4 @@
-const Thermostat = require('./thermostat.js');
+import Thermostat from './thermostat.js';
 
 describe('Thermostat', () => {
   let thermostat;

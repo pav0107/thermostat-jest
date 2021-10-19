@@ -56,4 +56,4 @@ class Thermostat {
     }
   }
 }
-module.exports = Thermostat;
+export default Thermostat;
