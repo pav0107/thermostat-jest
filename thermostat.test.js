@@ -32,18 +32,18 @@ describe('Thermostat', () => {
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
 
-  it('can switch PSM off', () => {
+  it('can switch Power Saving Mode off', () => {
     thermostat.switchPowerSavingModeOff();
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
   });
 
-  it('can switch PSM back on', () => {
+  it('can switch Power Saving Mode back on', () => {
     thermostat.switchPowerSavingModeOff();
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
     thermostat.switchPowerSavingModeOn();
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
-  describe('when PSM is on', () => {
+  describe('when Power Saving Mode is on', () => {
     it('has a maximum value of 25', () => {
       for (let i = 0; i < 6; i++) {
         thermostat.up();
@@ -51,7 +51,7 @@ describe('Thermostat', () => {
       expect(thermostat.getCurrentTemperature()).toBe(25);
     });
   });
-  describe('when PSM is off', () => {
+  describe('when Power Saving Mode is off', () => {
     it('has a maximum value of 32', () => {
       thermostat.switchPowerSavingModeOff();
       for (let i = 0; i < 13; i++) {
