@@ -43,6 +43,7 @@ describe('Thermostat', () => {
     thermostat.switchPowerSavingModeOn();
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
+
   describe('when Power Saving Mode is on', () => {
     it('has a maximum value of 25', () => {
       for (let i = 0; i < 6; i++) {
@@ -51,6 +52,7 @@ describe('Thermostat', () => {
       expect(thermostat.getCurrentTemperature()).toBe(25);
     });
   });
+
   describe('when Power Saving Mode is off', () => {
     it('has a maximum value of 32', () => {
       thermostat.switchPowerSavingModeOff();
@@ -60,6 +62,7 @@ describe('Thermostat', () => {
       expect(thermostat.getCurrentTemperature()).toBe(32);
     });
   });
+
   it('can be reset to the default temperature', () => {
     for (let i = 0; i < 6; i++) {
       thermostat.up();
@@ -67,6 +70,7 @@ describe('Thermostat', () => {
     thermostat.resetTemperature();
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
+
   describe('displaying energy usage', () => {
     describe('when the temperature is below 18 degrees', () => {
       it('it is considered low-usage', () => {
