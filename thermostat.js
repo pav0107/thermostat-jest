@@ -6,6 +6,8 @@ class Thermostat {
     this.DEFAULT_TEMPERATURE = 20;
     this.temperature = this.DEFAULT_TEMPERATURE;
     this.powerSavingMode = true;
+    this.MEDIUM_ENERGY_USAGE_LIMIT = 18;
+    this.HIGH_ENERGY_USAGE_LIMIT = 25;
   }
   getCurrentTemperature() {
     return this.temperature;
@@ -43,6 +45,15 @@ class Thermostat {
   }
   resetTemperature() {
     this.temperature = this.DEFAULT_TEMPERATURE;
+  }
+  energyUsage() {
+    if (this.getCurrentTemperature() < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+      return 'low-usage';
+    } else if (this.getCurrentTemperature() <= this.HIGH_ENERGY_USAGE_LIMIT) {
+      return 'medium-usage';
+    } else {
+      return 'high-usage';
+    }
   }
 }
 module.exports = Thermostat;
