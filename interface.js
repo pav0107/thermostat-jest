@@ -51,4 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#power-saving-status').innerText = 'off';
     updateTemperature();
   });
+
+  // Get weather info for London
+  const API = 'f5929c891d8537828818b3a10a7e3e0e';
+  const city = 'London';
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=${API}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 });
