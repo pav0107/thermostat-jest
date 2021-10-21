@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectCityEl = document.querySelector('#select-city');
   const currentCity = document.querySelector('#current-city');
   const currentOutdoorTemp = document.querySelector('#current-outdoor-temp');
+  const bodyEl = document.querySelector('#body');
 
   // Update temperature display
   const updateTemperature = () => {
     temperatureEl.innerText = thermostat.temperature;
-    temperatureEl.className = thermostat.energyUsage();
+    bodyEl.className = thermostat.energyUsage();
   };
 
   // Temperature display
