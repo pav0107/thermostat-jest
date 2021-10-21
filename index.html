@@ -5,18 +5,24 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1 id="current-outdoor-temp" class="hidden">Current outdoor temperature: <span id="current-temperature">20</span><span>&#176;</span>C</h1>
-    <section>
+    <div id="outdoor-temp">
+      <h1 id="current-outdoor-temp" class="hidden">Current outdoor temperature: <span id="current-temperature">20</span><span>&#176;</span>C</h1>
+    </div>
+    <div id="thermostat-temp">
       <h1><span id="temperature"></span><span>&#176;</span>C</h1>
-      <p>
-        <button id="temperature-up">+</button>
+    </div>
+    <div id="temp-change">
+      <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">Power Saving Mode on</button>
-        <button id="powersaving-off">Power Saving Mode  off</button>
-      </p>
-    </section>
+    </div>
+    <div id="power-saving-mode">
+      Power saving mode is <span id="power-saving-status">on</span>
+    </div>
+    <div id="power-saving-change">
+      <button id="powersaving-on">Power Saving Mode on</button>
+      <button id="powersaving-off">Power Saving Mode  off</button>
+    </div>
 
     <script type="module" src="./thermostat.js"></script>
     <script type="module" src="./interface.js"></script>

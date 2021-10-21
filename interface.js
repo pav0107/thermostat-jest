@@ -90,7 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       fetch(url)
         .then((response) => response.json())
-        .then((data) => (currentTemperatureEl.innerText = data.main.temp));
+        .then(
+          (data) =>
+            (currentTemperatureEl.innerText = Math.round(data.main.temp))
+        );
       currentOutdoorTemp.classList.remove('hidden');
       currentOutdoorTemp.classList.add('shown');
     });
